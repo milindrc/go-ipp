@@ -1,3 +1,3 @@
-module github.com/phin1x/go-ipp
+module github.com/milindrc/go-ipp
 
 go 1.13
