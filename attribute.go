@@ -26,7 +26,20 @@ func NewAttributeEncoder(w io.Writer) *AttributeEncoder {
 func (e *AttributeEncoder) Encode(attribute string, value interface{}) error {
 	tag, ok := AttributeTagMapping[attribute]
 	if !ok {
-		return fmt.Errorf("cannot get tag of attribute %s", attribute)
+		if err := e.encodeTag(TagString); err != nil {
+			return err
+		}
+
+		if err := e.encodeString(attribute); err != nil {
+			return err
+		}
+
+		if err := e.encodeString(value.(string)); err != nil {
+			return err
+		}
+
+		fmt.Printf("cannot get tag of attribute %s", attribute)
+		return nil
 	}
 
 	switch value.(type) {
