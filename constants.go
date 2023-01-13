@@ -345,6 +345,7 @@ const (
 	AttributeMemberNames            = "member-names"
 	AttributePrinterType            = "printer-type"
 	AttributePrinterMarkAndModel    = "printer-make-and-model"
+	AttributePrinterColorMode       = "print-color-mode"
 	AttributePrinterStateMessage    = "printer-state-message"
 	AttributePrinterUriSupported    = "printer-uri-supported"
 	AttributeJobMediaProgress       = "job-media-progress"
@@ -409,6 +410,7 @@ var (
 		AttributeRequestingUserName:     TagName,
 		AttributeWhichJobs:              TagKeyword,
 		AttributeFirstJobID:             TagInteger,
+		AttributePrinterColorMode:       TagText,
 		AttributeStatusMessage:          TagText,
 		AttributeLimit:                  TagInteger,
 	}
